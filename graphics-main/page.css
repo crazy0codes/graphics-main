@@ -1,0 +1,142 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: sans-serif;
+}
+
+a {
+    color : black;
+}
+:root {
+    --card-font : rgb(255, 255, 255); 
+}
+
+body {
+    background-color: rgb(255, 255, 255);
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+header {
+    height: 100vh;
+    background-color: rgb(169, 255, 89);
+    position: relative;
+}
+
+.page-header {
+    font-size: 10vw;
+    position: absolute;
+    bottom: 0;
+    padding: 20px;
+}
+
+nav ul{
+    display: flex;
+    justify-content: right;
+    list-style: none;
+    padding: 20px;
+}
+ul>li {
+    padding:10px;
+    font-size: 1.3em;
+    position: relative;
+}
+
+
+.card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 320px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  padding: 32px;
+  overflow: hidden;
+  border-radius: 10px;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+  border:3px solid white;
+  border-left: 0px ;
+  margin: 20px;
+  background-color: rgb(0, 0, 0);
+  color: black;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  color: var(--card-font);
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.content .heading {
+  font-weight: 700;
+  font-size: 32px;
+  position: relative;
+}
+
+.card:hover .heading::before {
+    content: '';
+    bottom: 0;
+    position: absolute;
+    min-width: 100%;
+    height: 4px;
+    background-color: rgb(87, 255, 9);
+    border-radius: 16px;
+}
+
+.content .para {
+  line-height: 1.5;
+}
+
+.content .btn {
+  color: var(--card-font);
+  text-decoration: none;
+  padding: 10px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(-45deg, #f89b29 0%, #ff0f7b 100% );
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 5px;
+  height: 100%;
+  background: linear-gradient(-45deg, #f89b29 0%, #ff0f7b 100% );
+  z-index: -1;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.card:hover::before {
+  width: 100%;
+}
+
+.card:hover .btn {
+  color: var(--card-font);
+  background: rgb(63, 255, 63);
+}
+
+.content .btn:hover {
+  outline: 2px solid var(--card-font);
+  background: transparent;
+  color: var(--card-font);
+}
+
+.content .btn:active {
+  box-shadow: none;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}

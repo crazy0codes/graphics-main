@@ -7,9 +7,7 @@ let bg_for = document.querySelector('.subheading')
 //     bg_for.style.backgroundImage = bg[1]
 // },1000)
 
-document.addEventListener('DOMContentLoaded', function() {
-     document.querySelector('#welcome').style.backgroundColor = "black"
-     document.querySelector('#welcome').style.transitionDuration = "2s"
-     document.querySelector('#welcome').style.color = "white"
-});
-
+// document.addEventListener('load', function() {
+//      alert('The DOM is ready to display')
+//      this.body.style.display = 'none'
+// });
