@@ -138,5 +138,9 @@ ul>li {
 main {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+}
+
+.btn > a {
+  color: white;
+  text-decoration: none;
 }
