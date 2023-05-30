@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+</head>
+<body>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-size: 4vh;
+            font-family: sans-serif
+        }
+        main {
+            height: 100dvh;
+            overflow: hidden;
+            background-color: black;
+            color: white;
+        }
+        .about-container {
+            overflow: hidden;
+            display: flex;
+            align-items:center;
+            justify-content: center;
+            /* display: grid;
+            place-content: center;
+            grid-auto-flow: column; */
+        }
+        .about-text {
+            padding: 40px;
+        }
+        .img {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        img {
+            height: 50%;
+            border-radius: 10px;
+        }
+        h1 {
+            text-decoration: underline;
+        }
+        .home-btn {
+            color: white;
+            margin-right: 30px;
+            margin-top: 30px; 
+            display: flex;
+            justify-content: right;
+            text-decoration: none;
+            /* border-bottom: 2px solid rgb(85, 255, 0); */
+        }
+        /* .home-btn::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            height: 2px;
+            background-color: rgb(85, 255, 0);
+            width: 0%;
+            overflow: hidden;
+            transition-duration: 0.6s;
+        }
+        .home-btn:hover::before{
+            width: 100%;
+            transition-duration: 0.6s;
+        } */
+
+        hr {
+            color: rgb(85, 255, 0);
+        }
+
+
+        @media screen and (max-width:840px){
+            .img {
+                display: none;
+            }
+            .about-container {
+                height: 100vh;
+            }
+            .about-text {
+                padding: 30px;
+            }
+        }
+
+    </style>
+    <main>
+        <a class = "home-btn" href="/index.html">Home</a>
+        <hr/>
+        <section class="about-container">
+            <div class="about-text">
+                <h1>About</h1>
+                <br/>
+                <p>Welcome!</p>
+                <p>We are dedicated to making your life easier.</p>
+                <p>Our website was created with the goal of reducing <br/>the workload for students like ourselves who value their time.</p>
+                <br/>
+                <p>Thank you for visiting our website!</p>
+            </div>            
+            <div class="img"><img src="https://media1.giphy.com/media/2xu5zpSV3oqKcCSZ49/giphy.webp?cid=ecf05e47npoe5hscvuwb7sh4nf457htazml27hc8zgbg3znq&ep=v1_gifs_search&rid=giphy.webp&ct=g"></div>
+        </section>
+    </main>
+</body>
+</html>
