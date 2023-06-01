@@ -78,3 +78,9 @@ section {
 body {
     background-color: black;
 }
+
+@media screen and (max-width : 320px) {
+    section {
+        align-items: left;
+    }
+}
