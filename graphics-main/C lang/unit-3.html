@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/tokyo-night-dark.min.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <nav>
+        <ul class="nav-items">
+            <li class="nav-item"><a class="nav-link" href= "/index.html" >Home</a></li>
+            <li class="nav-item"><a class="nav-link" href= "index.html" >Unit-1</a></li>
+            <li class="nav-item"><a class="nav-link" href= "unit-2.html" >Unit-2</a></li>
+            <li class="nav-item"><a class="nav-link" href= "/pages/About.html" >About</a></li>
+        </ul>
+    </nav>
+    <main>
+        <div class="header">Pointers & Dynamic Memory Allocation</div>
+        <div class="container">
+          <p class="question">
+            Addition of two Numbers
+          </p>
+          <pre>
+            <code class="language-c">
+                #include <stdio.h>
+                    void addition (int *, int *);
+                    int main() {
+                        int a,b;
+                        printf("Enter the value of a\n");
+                        scanf("%d",&a);
+                        printf("Enter the value of b\n");
+                        scanf("%d",&b);
+                        addition(&a,&b);
+                        return 0;
+                    }
+                    void addition(int *p1, int*p2){
+                        printf("Sum of two elements = %d",*p1+*p2);
+                    }
+            </code>
+          </pre>
+        </div>
+        <div class="container">
+            <p class="question">
+              Odd or Even
+            </p>
+            <pre>
+              <code class="language-c">
+                #include <stdio.h>
+
+                    void oddoreven(int *a) {
+                        if (*a % 2 == 0) {
+                            printf("%d is an even number\n", *a);
+                        } else {
+                            printf("%d is an odd number\n", *a);
+                        }
+                    }
+                    
+                    int main() {
+                        int a;
+                        printf("Enter the number\n");
+                        scanf("%d", &a);
+                        oddoreven(&a);
+                        return 0;
+                    }
+              </code>
+            </pre>
+          </div>
+          <div class="container">
+            <p class="question">
+                Swapping 2 Numbers
+            </p>
+            <pre>
+              <code class="language-c">
+                #include <stdio.h>
+
+                    void swap(int *a, int *b) {
+                        int temp = *a;
+                        *a = *b;
+                        *b = temp;
+                    }
+                    
+                    int main() {
+                        int a, b;
+                        printf("Enter the value of a");
+                        scanf("%d", &a);
+                        printf("\nEnter the value of b");
+                        scanf("%d", &b);
+                        printf("\nBefore swapping\n");
+                        printf("a = %d b = %d\n", a, b);
+                        swap(&a, &b);
+                        printf("After swapping\n");
+                        printf("a = %d b = %d\n", a, b);
+                        return 0;
+                    }
+              </code>
+            </pre>
+          </div>
+          <div class="container">
+            <p class="question">
+                Distance between 2 Points
+            </p>
+            <pre>
+              <code class="language-c">
+                #include <stdio.h>
+                  int main (){
+                      int a;
+                      printf("Enter an integer");
+                      scanf("%d",&a);
+                      printf("\nYou entered %d",a);
+                      return 0;
+                  }
+              </code>
+            </pre>
+          </div>
+          <div class="container">
+            <p class="question">
+              Addition of two Numbers
+            </p>
+            <pre>
+              <code class="language-c">
+                #include <stdio.h>
+                    #include <math.h>
+                    
+                    float distance(int *x1, int *y1, int *x2, int *y2) {
+                        float dist = sqrt(pow((*x2 - *x1), 2) + pow((*y2 - *y1), 2));
+                        return dist;
+                    }
+                    
+                    int main() {
+                        int x1, y1, x2, y2;
+                        printf("Enter x1\n");
+                        scanf("%d", &x1);
+                        printf("Enter y1\n");
+                        scanf("%d", &y1);
+                        printf("Enter x2\n");
+                        scanf("%d", &x2);
+                        printf("Enter y2\n");
+                        scanf("%d", &y2);
+                        printf("Distance between 2 points is %.2f\n", distance(&x1, &y1, &x2, &y2));
+                        return 0;
+                    }
+              </code>
+            </pre>
+          </div>
+          <div class="container">
+            <p class="question">
+                Maximum of 3 numbers
+            </p>
+            <pre>
+              <code class="language-c">
+                #include <stdio.h>
+                    int maximum(int*,int*,int*);
+                    int main() {
+                        int a, b, c;
+                        printf("Enter the value of a\n");
+                        scanf("%d", &a);
+                        printf("Enter the value of b\n");
+                        scanf("%d", &b);
+                        printf("Enter the value of c\n");
+                        scanf("%d", &c);
+                        printf("Maximum element is %d\n", maximum(&a, &b, &c));
+                        return 0;
+                    }
+                    int maximum(int *a, int *b, int *c) {
+                        int max = *a;
+                        if (*b > max) 
+                        max = *b;
+                        if (*c > max) 
+                        max = *c;
+                        return max;
+                    }
+              </code>
+            </pre>
+          </div>
+          <div class="container">
+            <p class="question">
+              Addition of two Numbers
+            </p>
+            <pre>
+              <code class="language-c">
+                #include <stdio.h>
+                  int main (){
+                      int a;
+                      printf("Enter an integer");
+                      scanf("%d",&a);
+                      printf("\nYou entered %d",a);
+                      return 0;
+                  }
+              </code>
+            </pre>
+          </div>
+          <div class="container">
+            <p class="question">
+              Addition of two Numbers
+            </p>
+            <pre>
+              <code class="language-c">
+                #include <stdio.h>
+                  int main (){
+                      int a;
+                      printf("Enter an integer");
+                      scanf("%d",&a);
+                      printf("\nYou entered %d",a);
+                      return 0;
+                  }
+              </code>
+            </pre>
+          </div>
+          <div class="container">
+            <p class="question">
+              Addition of two Numbers
+            </p>
+            <pre>
+              <code class="language-c">
+                #include <stdio.h>
+                  int main (){
+                      int a;
+                      printf("Enter an integer");
+                      scanf("%d",&a);
+                      printf("\nYou entered %d",a);
+                      return 0;
+                  }
+              </code>
+            </pre>
+          </div>
+          <div class="container">
+            <p class="question">
+              Addition of two Numbers
+            </p>
+            <pre>
+              <code class="language-c">
+                #include <stdio.h>
+                  int main (){
+                      int a;
+                      printf("Enter an integer");
+                      scanf("%d",&a);
+                      printf("\nYou entered %d",a);
+                      return 0;
+                  }
+              </code>
+            </pre>
+          </div>
+          <div class="container">
+            <p class="question">
+              Addition of two Numbers
+            </p>
+            <pre>
+              <code class="language-c">
+                #include <stdio.h>
+                  int main (){
+                      int a;
+                      printf("Enter an integer");
+                      scanf("%d",&a);
+                      printf("\nYou entered %d",a);
+                      return 0;
+                  }
+              </code>
+            </pre>
+          </div>
+          <div class="container">
+            <p class="question">
+              Addition of two Numbers
+            </p>
+            <pre>
+              <code class="language-c">
+                #include <stdio.h>
+                  int main (){
+                      int a;
+                      printf("Enter an integer");
+                      scanf("%d",&a);
+                      printf("\nYou entered %d",a);
+                      return 0;
+                  }
+              </code>
+            </pre>
+          </div>
+          <div class="container">
+            <p class="question">
+              Addition of two Numbers
+            </p>
+            <pre>
+              <code class="language-c">
+                #include <stdio.h>
+                  int main (){
+                      int a;
+                      printf("Enter an integer");
+                      scanf("%d",&a);
+                      printf("\nYou entered %d",a);
+                      return 0;
+                  }
+              </code>
+            </pre>
+          </div>
+          <div class="container">
+            <p class="question">
+              Addition of two Numbers
+            </p>
+            <pre>
+              <code class="language-c">
+                #include <stdio.h>
+                  int main (){
+                      int a;
+                      printf("Enter an integer");
+                      scanf("%d",&a);
+                      printf("\nYou entered %d",a);
+                      return 0;
+                  }
+              </code>
+            </pre>
+          </div>
+    </main>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
