@@ -2,12 +2,17 @@
     margin: 0px;
     padding: 0px;
     font-family: sans-serif;
-    color: rgb(0, 0, 0);
-    color: white;
+}
+
+.header {
+    font-size: 6vmin;
+    padding: 40px 0 40px 0 ;
+    font-weight: 600;
 }
 
 body {
     position: relative;
+    background-color: #ffffff;
 }
 
 /* Navbar */
@@ -61,26 +66,25 @@ nav {
 
 /* Navbar css end */
 
-section {
-    padding: 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content:space-between;
-    align-items: center;
-}
-
-.question {
-    padding: 20px;
-    font-weight: 600;
-    width: 90%;
-}
-
-body {
-    background-color: black;
-}
-
 @media screen and (max-width : 320px) {
     section {
         align-items: left;
     }
+}
+
+.question {
+    padding: 0 0 20px 0;
+    font-size: 18px;
+}
+
+main {
+    padding: 30px 10%;
+}
+
+code {
+    width: 100%;
+}
+
+code::-webkit-scrollbar {
+    display: none;
 }
