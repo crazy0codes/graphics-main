@@ -89,3 +89,24 @@ code {
 code::-webkit-scrollbar {
     display: none;
 }
+
+pre {
+    position: relative;
+    height: max-content;
+}
+
+.copy {
+    position: absolute;
+    top: 34px;
+    left: 20px;
+    padding: 4px;
+    border-radius: 10%;
+    font-weight: 600;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+}
+
+.copy:hover {
+    background-color: rgb(68, 232, 43);
+    transition-duration: 600ms;
+}
