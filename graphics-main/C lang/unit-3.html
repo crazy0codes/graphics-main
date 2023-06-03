@@ -311,6 +311,276 @@
               </code>
             </pre>
           </div>
+          <div class="header">File Handling</div>
+          <div class="container">
+            <p class="question">
+              Write a program to copy the content from one file to another file.
+              <br/>
+              <strong>Rules:</strong>
+              The input file should be named as "input.txt".
+              The output file should be named as "output.txt".
+            </p>
+            <pre>
+              <code class="language-c">
+                #include <stdio.h>
+
+                  int main() {
+                      FILE *inputFile, *outputFile;
+                      char ch;
+                  
+                      // Open the input file in read mode
+                      inputFile = fopen("input.txt", "r");
+                      if (inputFile == NULL) {
+                          printf("Failed to open input file.\n");
+                          return 1;
+                      }
+                  
+                      // Open the output file in write mode
+                      outputFile = fopen("output.txt", "w");
+                      if (outputFile == NULL) {
+                          printf("Failed to create output file.\n");
+                          fclose(inputFile);
+                          return 1;
+                      }
+                  
+                      // Copy content from input file to output file
+                      while ((ch = fgetc(inputFile)) != EOF) {
+                          fputc(ch, outputFile);
+                      }
+                  
+                      // Close the files
+                      fclose(inputFile);
+                      fclose(outputFile);
+                  
+                      printf("File copied successfully.\n");
+                  
+                      return 0;
+                  }
+              </code>
+            </pre>
+          </div>
+          <div class="container">
+            <p class="question">
+              Write a program  to count the number of characters in the given file (sample.txt). 
+            </p>
+            <pre>
+              <code class="language-c">
+                #include <stdio.h>
+
+                  int main() {
+                      FILE *file;
+                      int count = 0;
+                      char ch;
+                  
+                      // Open the file in read mode
+                      file = fopen("sample.txt", "r");
+                      if (file == NULL) {
+                          printf("Failed to open the file.\n");
+                          return 1;
+                      }
+                  
+                      // Count the number of characters in the file
+                      while ((ch = fgetc(file)) != EOF) {
+                          count++;
+                      }
+                  
+                      // Close the file
+                      fclose(file);
+                  
+                      printf("The number of characters present in file is: %d\n", count);
+                  
+                      return 0;
+                  }
+              </code>
+            </pre>
+          </div>
+          <div class="container">
+            <p class="question">
+              Write the program to open an input file and read the number of lines in the input file.
+            </p>
+            <pre>
+              <code class="language-c">
+                #include <stdio.h>
+
+                  int main() {
+                      FILE *file;
+                      int count = 0;
+                      char ch;
+                  
+                      // Open the file in read mode
+                      file = fopen("input.txt", "r");
+                      if (file == NULL) {
+                          printf("Failed to open the file.\n");
+                          return 1;
+                      }
+                  
+                      // Count the number of lines in the file
+                      while ((ch = fgetc(file)) != EOF) {
+                          if (ch == '\n') {
+                              count++;
+                          }
+                      }
+                  
+                      // Close the file
+                      fclose(file);
+                  
+                      printf("The file has %d lines\n", count);
+                  
+                      return 0;
+                  }
+              </code>
+            </pre>
+          </div>
+          <div class="container">
+            <p class="question">
+              Write a program to open the file and delete a specific line from a text file.
+            </p>
+            <pre>
+              <code class="language-c">
+                #include <stdio.h>
+
+                  #define MAX_SIZE 1000
+                  
+                  int main() {
+                      FILE *inputFile, *outputFile;
+                      char inputFileName[] = "input.txt";
+                      char outputFileName[] = "output.txt";
+                      char content[MAX_SIZE];
+                      int lineToDelete;
+                      int lineNumber = 1;
+                  
+                      // Open the input file in read mode
+                      inputFile = fopen(inputFileName, "r");
+                      if (inputFile == NULL) {
+                          printf("Failed to open the input file.\n");
+                          return 1;
+                      }
+                  
+                      // Open the output file in write mode
+                      outputFile = fopen(outputFileName, "w");
+                      if (outputFile == NULL) {
+                          printf("Failed to open the output file.\n");
+                          fclose(inputFile);
+                          return 1;
+                      }
+                  
+                      // Ask the user for the line number to delete
+                      printf("Enter line number of the line to be deleted: ");
+                      scanf("%d", &lineToDelete);
+                  
+                      // Read the content of the input file and delete the specified line
+                      while (fgets(content, MAX_SIZE, inputFile) != NULL) {
+                          if (lineNumber != lineToDelete) {
+                              fputs(content, outputFile);
+                          }
+                          lineNumber++;
+                      }
+                  
+                      // Close both files
+                      fclose(inputFile);
+                      fclose(outputFile);
+                  
+                      printf("Line %d deleted successfully.\n", lineToDelete);
+                  
+                      return 0;
+                  }
+              </code>
+            </pre>
+          </div>
+          <div class="container">
+            <p class="question">
+              Write the program to reverse the given text file. 
+            </p>
+            <pre>
+              <code class="language-c">
+                #include <stdio.h>
+                  #include <string.h>
+                  
+                  #define MAX_SIZE 1000
+                  
+                  int main() {
+                      FILE *inputFile, *outputFile;
+                      char inputFileName[] = "input.txt";
+                      char outputFileName[] = "output.txt";
+                      char content[MAX_SIZE];
+                      int i, length;
+                  
+                      // Open the input file in read mode
+                      inputFile = fopen(inputFileName, "r");
+                      if (inputFile == NULL) {
+                          printf("Failed to open the input file.\n");
+                          return 1;
+                      }
+                  
+                      // Read the content of the input file
+                      fgets(content, MAX_SIZE, inputFile);
+                  
+                      // Close the input file
+                      fclose(inputFile);
+                  
+                      // Open the output file in write mode
+                      outputFile = fopen(outputFileName, "w");
+                      if (outputFile == NULL) {
+                          printf("Failed to open the output file.\n");
+                          return 1;
+                      }
+                  
+                      // Get the length of the content
+                      length = strlen(content);
+                  
+                      // Write the reversed content to the output file
+                      for (i = length - 1; i >= 0; i--) {
+                          fputc(content[i], outputFile);
+                      }
+                  
+                      // Close the output file
+                      fclose(outputFile);
+                  
+                      printf("File reversed successfully.\n");
+                  
+                      return 0;
+                  }
+              </code>
+            </pre>
+          </div>
+          <div class="container">
+            <p class="question">
+              Consider an input file "sample.txt" with integer values. Write a program to open the file and read the content to find the sum of all values in the file. 
+            </p>
+            <pre>
+              <code class="language-c">
+                #include <stdio.h>
+
+                  #define MAX_SIZE 100
+                  
+                  int main() {
+                      FILE *file;
+                      char fileName[] = "sample.txt";
+                      int num;
+                      int sum = 0;
+                  
+                      // Open the file in read mode
+                      file = fopen(fileName, "r");
+                      if (file == NULL) {
+                          printf("Failed to open the file.\n");
+                          return 1;
+                      }
+                  
+                      // Read the integers from the file and calculate the sum
+                      while (fscanf(file, "%d", &num) == 1) {
+                          sum += num;
+                      }
+                  
+                      // Close the file
+                      fclose(file);
+                  
+                      printf("The sum of the integers in the file %s is:%d\n", fileName, sum);
+                  
+                      return 0;
+                  }
+              </code>
+            </pre>
+          </div>
     </main>
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
     <script src="main.js"></script>
