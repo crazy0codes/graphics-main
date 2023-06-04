@@ -1,4 +1,4 @@
-* {
+*:not(dl,dt,dd){
     margin: 0px;
     padding: 0px;
     font-family: sans-serif;
@@ -13,6 +13,7 @@
 body {
     position: relative;
     background-color: #ffffff;
+    scroll-behavior: smooth;
 }
 
 /* Navbar */
@@ -112,6 +113,22 @@ pre {
     transition-duration: 600ms;
 }
 
+dl {
+    padding: 5% 10% 20px;
+}
+
+dt {
+    font-size: 30px;
+    padding: 20px;
+}
+
+dd {
+    padding: 4px;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 
 /*medium mobile 375px*/
 
@@ -129,4 +146,21 @@ pre {
     main {
         padding: 5%;
     }
+}
+
+.top {
+    position: fixed;
+    display: grid;
+    place-content: center;
+    bottom: 30px;
+    right: 30px;
+    width: 70px;
+    height: 30px;
+    border-radius: 20px;
+    color: white;
+    background-color: rgb(29, 83, 201);
+}
+.top>a {
+    color: white;
+    text-decoration: none;
 }
