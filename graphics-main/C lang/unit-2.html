@@ -17,6 +17,9 @@
             <li class="nav-item"><a class="nav-link" href="/pages/About.html">About</a></li>
         </ul>
     </nav>
+    <dl>
+        <dt>ARRAYS</dt>
+    </dl>
     <main>
         <div class="header">ARRAYS</div>
         <div class="container">
@@ -715,5 +718,25 @@
     </main>
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
     <script src="main.js"></script>
+    <script>
+        question_number = 0;
+        questions.forEach(text => {
+    count++;
+    const dd = document.createElement('dd');
+    dd.innerHTML = `<a href=#q${question_number} >${text.textContent}</a>`;
+    question_number++;
+    dl.insertAdjacentElement('beforeend', dd);
+    if(count == 8){
+      const dt = document.createElement('dt');
+      dt.innerText = document.querySelectorAll('.header')[1].innerText;
+      dl.insertAdjacentElement('beforeend', dt)
+    }
+    if(count == 18){
+      const dt = document.createElement('dt');
+      dt.innerText = document.querySelectorAll('.header')[2].innerText;
+      dl.insertAdjacentElement('beforeend', dt)
+    }
+  });
+      </script>
 </body>
 </html>

@@ -12,8 +12,7 @@
 
 body {
     position: relative;
-    background-color: #ffffff;
-    scroll-behavior: smooth;
+    scroll-behavior:smooth;
 }
 
 /* Navbar */
@@ -31,7 +30,7 @@ nav {
     top: 0;
     z-index: 1;
 
-    box-shadow: black 0px 0.9px 5px 0.1px ;
+    box-shadow: black 0px 0.9px 11px 0.01px ;
 }
 
 .nav-items {
@@ -124,10 +123,14 @@ dt {
 
 dd {
     padding: 4px;
-    width: 100%;
+    width: 90%;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+dd>a {
+    font-weight: 600;
 }
 
 /*medium mobile 375px*/
@@ -158,9 +161,12 @@ dd {
     height: 30px;
     border-radius: 20px;
     color: white;
-    background-color: rgb(29, 83, 201);
+    background-color: rgb(21, 2, 194);
 }
 .top>a {
+    z-index: 1;
     color: white;
+    font-weight: 600;
     text-decoration: none;
+    letter-spacing: 1px;
 }
