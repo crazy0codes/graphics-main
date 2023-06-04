@@ -84,8 +84,7 @@ main {
 }
 
 code {
-    width: 100%;
-    border-radius: 20px;
+    border-radius: 6px;
 }
 
 code::-webkit-scrollbar {
@@ -111,4 +110,23 @@ pre {
 .copy:hover {
     background-color: rgb(68, 232, 43);
     transition-duration: 600ms;
+}
+
+
+/*medium mobile 375px*/
+
+@media screen and (max-width : 376px){
+    .nav-items {
+        padding-right: 2%;
+    }
+    .nav-link {
+        font-size: 5vmin;
+    }
+    body::-webkit-scrollbar {
+        display: none;
+    }
+
+    main {
+        padding: 5%;
+    }
 }
