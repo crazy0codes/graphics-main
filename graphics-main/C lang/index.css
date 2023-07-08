@@ -24,17 +24,17 @@ nav {
     justify-content: right;
     align-items: center;
 
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(35, 34, 34);
 
     position: sticky;
     top: 0;
     z-index: 1;
 
-    box-shadow: black 0px 0.9px 11px 0.01px ;
+    box-shadow: black 0px 0.9px 4px 0.01px ;
 }
 
 .nav-items {
-    padding-right: 20px;
+    margin-right: 20px;
     display: flex;
 }
 
@@ -50,19 +50,23 @@ nav {
     list-style: none;
 }
 
+.nav-link:hover {
+    color: white;
+}
+
 .nav-link::before {
     content: '';
     bottom: 0;
     height: 3px;
     background-color: rgb(124, 255, 17);
     position: absolute;
-    width: 0%;
+    width: 0;
     border-radius: 10px;
     transition-duration: 0.6s;
 }
 
 .nav-link:hover::before {
-    width: 100%;
+    width: 70%;
     transition-duration: 0.6s;
 }
 
@@ -131,6 +135,8 @@ dd {
 
 dd>a {
     font-weight: 600;
+    color: black;
+    text-decoration-color: rgb(3, 129, 3);
 }
 
 /*medium mobile 375px*/
@@ -154,20 +160,6 @@ dd>a {
 .top {
     z-index: 100;
     position: fixed;
-    display: grid;
-    place-content: center;
     bottom: 30px;
     right: 30px;
-    width: 70px;
-    height: 30px;
-    border-radius: 20px;
-    color: white;
-    background-color: rgb(21, 2, 194);
-}
-.top>a {
-    z-index: 1;
-    color: white;
-    font-weight: 600;
-    text-decoration: none;
-    letter-spacing: 1px;
 }
