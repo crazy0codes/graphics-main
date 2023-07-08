@@ -152,6 +152,7 @@ dd>a {
 }
 
 .top {
+    z-index: 100;
     position: fixed;
     display: grid;
     place-content: center;

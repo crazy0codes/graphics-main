@@ -32,7 +32,8 @@ body::-webkit-scrollbar-track {
     flex-wrap: wrap;
     justify-content:  center;
     align-items:  center;
-  }
+}
+
 .cards,.flat{
 position: relative;
 display: flex;
